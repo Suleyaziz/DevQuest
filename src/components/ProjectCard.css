@@ -1,0 +1,197 @@
+.project-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.project-card-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-completed {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.status-in-progress {
+    background-color: #feebc8;
+    color: #744210;
+}
+
+.status-not-started {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.project-description {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.project-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #4299e1;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: #718096;
+    text-align: right;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    color: #4299e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+.toggle-tasks-btn {
+    background: none;
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #4a5568;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.toggle-tasks-btn:hover {
+    background-color: #f7fafc;
+}
+
+.project-tasks {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+.project-tasks h4 {
+    margin: 0 0 10px 0;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.project-tasks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-tasks li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.project-tasks li:last-child {
+    border-bottom: none;
+}
+
+.task-status {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.task-completed {
+    color: #718096;
+    text-decoration: line-through;
+}
+
+.view-project-btn {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+
+.view-project-btn:hover {
+    background-color: #3182ce;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .status-badge {
+        align-self: flex-start;
+    }
+}
