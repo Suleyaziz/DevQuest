@@ -11,14 +11,14 @@
 }
 
 .dashboard-header h1 {
-    color: #2d3748;
+    color: #000001;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .dashboard-header p {
-    color: #718096;
+    color: #000000;
     font-size: 1.1rem;
 }
 
@@ -31,7 +31,8 @@
 }
 
 .stat-card {
-    background: white;
+        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
+
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -59,24 +60,24 @@
 .total-projects .stat-icon { background: #ebf8ff; }
 .completed-projects .stat-icon { background: #f0fff4; }
 .progress-projects .stat-icon { background: #fffbeb; }
-.tasks-stats .stat-icon { background: #faf5ff; }
+.tasks-stats .stat-icon { background: #faf5ff;  }
 
 .stat-content h3 {
     font-size: 2rem;
     font-weight: 700;
     margin: 0;
-    color: #2d3748;
+    color: #000000;
 }
 
 .stat-content p {
-    color: #718096;
+    color: #000000;
     margin: 0;
     font-weight: 500;
 }
 
 /* Progress Section */
 .progress-section {
-    background: white;
+        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -91,7 +92,7 @@
 }
 
 .progress-header h2 {
-    color: #2d3748;
+    color: #000000;
     margin: 0;
     flex: 1;
 }
@@ -99,7 +100,7 @@
 .progress-percentage {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #4299e1;
+    color: #000000;
 }
 
 .progress-bar {
@@ -120,12 +121,13 @@
 .progress-labels {
     display: flex;
     justify-content: space-between;
-    color: #718096;
+    color: #001a42;
     font-size: 0.875rem;
 }
 
 /* Recent Projects */
 .recent-projects {
+    
     margin-bottom: 3rem;
 }
 
@@ -137,14 +139,14 @@
 }
 
 .section-header h2 {
-    color: #2d3748;
+    color: #000000;
     margin: 0;
 }
 
 .view-all-btn {
     background: none;
     border: none;
-    color: #4299e1;
+    color: #003b6c;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -171,12 +173,12 @@
 }
 
 .empty-state h3 {
-    color: #2d3748;
+    color: #000000;
     margin-bottom: 0.5rem;
 }
 
 .empty-state p {
-    color: #718096;
+    color: #000000;
     margin-bottom: 2rem;
 }
 
@@ -203,7 +205,7 @@
 }
 
 .project-card {
-    background: white;
+        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -224,7 +226,7 @@
 }
 
 .project-card-header h3 {
-    color: #2d3748;
+    color: #000000;
     margin: 0;
     flex: 1;
 }
@@ -242,7 +244,7 @@
 .status-completed { background: #c6f6d5; color: #22543d; }
 
 .project-description {
-    color: #718096;
+    color: #000000;
     line-height: 1.5;
     margin-bottom: 1rem;
     height: 3rem;
@@ -260,7 +262,7 @@
 
 .project-progress .progress-text {
     font-size: 0.875rem;
-    color: #718096;
+    color: #000000;
     text-align: right;
 }
 
@@ -268,14 +270,18 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.875rem;
-    color: #a0aec0;
+    color: #000000;
     margin-bottom: 1rem;
 }
-
+.project-meta span:first-child,
+.project-meta div:first-child {
+    color: #000000 !important;
+    font-weight: 600;
+}
 .view-project-btn {
     width: 100%;
     background: #4299e1;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 0.75rem;
     border-radius: 6px;
@@ -290,14 +296,14 @@
 
 /* Quick Actions */
 .quick-actions {
-    background: white;
+        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .quick-actions h2 {
-    color: #2d3748;
+    color: #000000;
     margin-bottom: 1.5rem;
     text-align: center;
 }

@@ -1,94 +1,126 @@
+/* ProjectCard.css */
 .project-card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
+    height: fit-content;
 }
 
 .project-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-color: #cbd5e0;
 }
 
 .project-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.75rem;
 }
 
 .project-card-header h3 {
     margin: 0;
-    color: #2d3748;
-    font-size: 1.2rem;
+    color: #00040a;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
     flex: 1;
 }
 
 .status-badge {
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .status-completed {
     background-color: #c6f6d5;
     color: #22543d;
+    border: 1px solid #9ae6b4;
 }
 
 .status-in-progress {
     background-color: #feebc8;
     color: #744210;
+    border: 1px solid #fbd38d;
 }
 
 .status-not-started {
     background-color: #e2e8f0;
     color: #4a5568;
+    border: 1px solid #cbd5e0;
 }
 
 .project-description {
-    color: #718096;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    color: #000204;
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin: 0;
+    overflow: hidden;
 }
 
 .project-progress {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.5rem;
 }
 
 .progress-bar {
     height: 8px;
-    background-color: #e2e8f0;
+    background-color: #edf2f7;
     border-radius: 4px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background-color: #4299e1;
+    background: linear-gradient(90deg, #4299e1, #4f46e5);
     border-radius: 4px;
     transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .progress-text {
-    font-size: 0.8rem;
-    color: #718096;
+    font-size: 0.875rem;
+    color: #000000;
     text-align: right;
+    font-weight: 500;
 }
 
 .project-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
-    color: #718096;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #000000;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
 }
 
 .github-link {
@@ -96,38 +128,47 @@
     align-items: center;
     color: #4299e1;
     text-decoration: none;
-    font-size: 0.9rem;
-    gap: 5px;
+    font-weight: 500;
+    gap: 0.375rem;
+    transition: color 0.2s ease;
 }
 
 .github-link:hover {
+    color: #3182ce;
     text-decoration: underline;
 }
 
 .toggle-tasks-btn {
-    background: none;
+    background: #f7fafc;
     border: 1px solid #e2e8f0;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 0.625rem 1rem;
+    border-radius: 6px;
     cursor: pointer;
     color: #4a5568;
-    font-size: 0.9rem;
-    transition: background-color 0.2s;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .toggle-tasks-btn:hover {
-    background-color: #f7fafc;
+    background: #edf2f7;
+    border-color: #cbd5e0;
 }
 
 .project-tasks {
     border-top: 1px solid #e2e8f0;
-    padding-top: 15px;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .project-tasks h4 {
-    margin: 0 0 10px 0;
-    color: #2d3748;
+    margin: 0 0 0.75rem 0;
+    color: #000000;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .project-tasks ul {
@@ -136,15 +177,15 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .project-tasks li {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 5px 0;
-    border-bottom: 1px solid #f1f5f9;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f7fafc;
 }
 
 .project-tasks li:last-child {
@@ -152,46 +193,70 @@
 }
 
 .task-status {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 20px;
     text-align: center;
+    color: #48bb78;
 }
 
 .task-completed {
-    color: #718096;
+    color: #a0aec0;
     text-decoration: line-through;
 }
 
 .view-project-btn {
-    background-color: #4299e1;
+    background: linear-gradient(135deg, #4299e1 0%, #4f46e5 100%);
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s;
+    font-weight: 600;
+    transition: all 0.2s ease;
     margin-top: auto;
+    text-align: center;
 }
 
 .view-project-btn:hover {
-    background-color: #3182ce;
+    background: linear-gradient(135deg, #3182ce 0%, #4338ca 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .project-card {
+        padding: 1.25rem;
+    }
+    
     .project-card-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 0.5rem;
     }
     
     .project-meta {
         flex-direction: column;
-        gap: 5px;
+        gap: 0.5rem;
+        align-items: flex-start;
     }
     
     .status-badge {
         align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .project-card-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .view-project-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
     }
 }

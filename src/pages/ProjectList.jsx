@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ProjectCard from '../components/ProjectCard';
 import './ProjectList.css';
 
@@ -9,32 +9,43 @@ function ProjectList() {
     const [error, setError] = useState(null);
     const [filter, setFilter] = useState('all');
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         fetchProjects();
     }, []);
 
+    // Listen for refresh trigger from navigation state
+    useEffect(() => {
+        if (location.state?.refresh) {
+            fetchProjects();
+            // Clear the navigation state to prevent infinite refreshes
+            navigate(location.pathname, { replace: true, state: {} });
+        }
+    }, [location.state, navigate, location.pathname]);
+
     const fetchProjects = () => {
+        setLoading(true);
         fetch("http://localhost:3000/projects")
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            const projectsWithProgress = data.map(project => ({
-                ...project,
-                progress: calculateProjectProgress(project)
-            }));
-            setProjects(projectsWithProgress);
-            setError(null);
-        })
-        .catch(err => {
-            setError(err.message);
-            console.error("Failed to fetch projects:", err);
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                const projectsWithProgress = data.map(project => ({
+                    ...project,
+                    progress: calculateProjectProgress(project)
+                }));
+                setProjects(projectsWithProgress);
+                setError(null);
+            })
+            .catch(err => {
+                setError(err.message);
+                console.error("Failed to fetch projects:", err);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     const calculateProjectProgress = (project) => {
@@ -50,6 +61,7 @@ function ProjectList() {
             })
             .then(response => {
                 if (response.ok) {
+                    // Remove the project from local state immediately
                     setProjects(prev => prev.filter(p => p.id !== projectId));
                 } else {
                     throw new Error('Failed to delete project');
@@ -58,6 +70,8 @@ function ProjectList() {
             .catch(err => {
                 setError(err.message);
                 console.error("Failed to delete project:", err);
+                // Refetch to ensure we have the latest data
+                fetchProjects();
             });
         }
     };
@@ -67,24 +81,41 @@ function ProjectList() {
         return project.status === filter;
     });
 
-    function handleViewDetails(project) {
+    const handleViewDetails = (project) => {
         navigate(`/projects/${project.id}`);
-    }
+    };
 
-    function handleEditProject(project) {
+    const handleEditProject = (project) => {
         navigate(`/projects/${project.id}/edit`);
-    }
+    };
+
+    const handleRefresh = () => {
+        fetchProjects();
+    };
 
     if (loading) {
-        return <div className="loading">Loading projects...</div>;
+        return (
+            <div className="project-list-container">
+                <div className="loading">Loading projects...</div>
+            </div>
+        );
     }
 
     if (error) {
         return (
-            <div className="error">
-                <h2>Error Loading Projects</h2>
-                <p>{error}</p>
-                <button onClick={fetchProjects}>Try Again</button>
+            <div className="project-list-container">
+                <div className="error">
+                    <h2>Error Loading Projects</h2>
+                    <p>{error}</p>
+                    <div className="error-actions">
+                        <button onClick={fetchProjects} className="retry-btn">
+                            Try Again
+                        </button>
+                        <button onClick={() => navigate('/new-project')} className="create-btn">
+                            Create New Project
+                        </button>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -92,27 +123,51 @@ function ProjectList() {
     return (
         <div className="project-list-container">
             <div className="project-list-header">
-                <h1>My Projects</h1>
-                <button 
-                    className="create-project-btn"
-                    onClick={() => navigate('/new-project')}
-                >
-                    + New Project
-                </button>
+                <div className="header-left">
+                    <h1>My Projects</h1>
+                    <span className="projects-count">({projects.length} total)</span>
+                </div>
+                <div className="header-right">
+                    <button 
+                        className="refresh-btn"
+                        onClick={handleRefresh}
+                        title="Refresh projects"
+                    >
+                        ↻
+                    </button>
+                    <button 
+                        className="create-project-btn"
+                        onClick={() => navigate('/new-project')}
+                    >
+                        + New Project
+                    </button>
+                </div>
             </div>
             
             <div className="project-filters">
-                <button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>
-                    All Projects
+                <button 
+                    className={filter === 'all' ? 'active' : ''} 
+                    onClick={() => setFilter('all')}
+                >
+                    All Projects ({projects.length})
                 </button>
-                <button className={filter === 'in-progress' ? 'active' : ''} onClick={() => setFilter('in-progress')}>
-                    In Progress
+                <button 
+                    className={filter === 'in-progress' ? 'active' : ''} 
+                    onClick={() => setFilter('in-progress')}
+                >
+                    In Progress ({projects.filter(p => p.status === 'in-progress').length})
                 </button>
-                <button className={filter === 'completed' ? 'active' : ''} onClick={() => setFilter('completed')}>
-                    Completed
+                <button 
+                    className={filter === 'completed' ? 'active' : ''} 
+                    onClick={() => setFilter('completed')}
+                >
+                    Completed ({projects.filter(p => p.status === 'completed').length})
                 </button>
-                <button className={filter === 'not-started' ? 'active' : ''} onClick={() => setFilter('not-started')}>
-                    Not Started
+                <button 
+                    className={filter === 'not-started' ? 'active' : ''} 
+                    onClick={() => setFilter('not-started')}
+                >
+                    Not Started ({projects.filter(p => p.status === 'not-started').length})
                 </button>
             </div>
 
@@ -120,19 +175,42 @@ function ProjectList() {
                 {filteredProjects.length === 0 ? (
                     <div className="no-projects">
                         <p>No projects found{filter !== 'all' ? ` with status "${filter}"` : ''}.</p>
+                        {filter !== 'all' && (
+                            <button 
+                                onClick={() => setFilter('all')}
+                                className="clear-filter-btn"
+                            >
+                                Show all projects
+                            </button>
+                        )}
+                        {projects.length === 0 && (
+                            <button 
+                                onClick={() => navigate('/new-project')}
+                                className="create-first-btn"
+                            >
+                                Create your first project
+                            </button>
+                        )}
                     </div>
                 ) : (
                     filteredProjects.map(project => (
                         <ProjectCard 
                             key={project.id} 
                             project={project} 
-                            onViewDetails={handleViewDetails}
-                            onEdit={handleEditProject}
-                            onDelete={handleDeleteProject}
+                            onViewDetails={() => handleViewDetails(project)}
+                            onEdit={() => handleEditProject(project)}
+                            onDelete={() => handleDeleteProject(project.id)}
                         />
                     ))
                 )}
             </div>
+
+            {/* Refresh indicator */}
+            {location.state?.refresh && (
+                <div className="refresh-indicator">
+                    Refreshing projects...
+                </div>
+            )}
         </div>
     );
 }

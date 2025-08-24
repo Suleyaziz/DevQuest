@@ -8,8 +8,9 @@ function NavBar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navigationItems = [
-        { path: '/projects', label: 'Projects', icon: '📋' },
-        { path: '/new-project', label: 'New Project', icon: '➕' },
+        { path: '/dashboard', label: 'Dashboard' },
+        { path: '/projects', label: 'Projects' },
+        { path: '/new-project', label: 'New Project' },
     ];
 
     const isActive = (path) => {
@@ -31,9 +32,9 @@ function NavBar() {
                 {/* Logo/Brand */}
                 <div 
                     className="navbar-brand" 
-                    onClick={() => handleNavigation('/projects')}
+                    onClick={() => handleNavigation('/dashboard')}
                 >
-                    <span className="navbar-logo">🚀</span>
+                    <span className="navbar-logo">⚡</span>
                     <span className="navbar-title">DevQuest</span>
                 </div>
 
@@ -45,7 +46,6 @@ function NavBar() {
                             className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
                             onClick={() => handleNavigation(item.path)}
                         >
-                            <span className="nav-icon">{item.icon}</span>
                             <span className="nav-label">{item.label}</span>
                         </button>
                     ))}
@@ -73,13 +73,10 @@ function NavBar() {
                         className={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
                         onClick={() => handleNavigation(item.path)}
                     >
-                        <span className="mobile-nav-icon">{item.icon}</span>
                         <span className="mobile-nav-label">{item.label}</span>
                     </button>
                 ))}
             </div>
-
-          
         </nav>
     );
 }

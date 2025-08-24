@@ -1,162 +1,26 @@
 {
   "projects": [
     {
-      "id": 1,
-      "name": "React Dashboard App",
-      "description": "Building an admin dashboard with React and Chart.js to visualize data analytics",
-      "status": "in-progress",
-      "progress": 65,
-      "createdAt": "2023-10-15T08:30:00Z",
-      "updatedAt": "2023-10-28T14:20:00Z",
-      "githubUrl": "https://github.com/yourusername/react-dashboard",
-      "tasks": [
-        {
-          "id": 101,
-          "title": "Set up React project structure",
-          "description": "Create components folder and basic file structure",
-          "completed": true,
-          "createdAt": "2023-10-15T09:00:00Z"
-        },
-        {
-          "id": 102,
-          "title": "Install dependencies",
-          "description": "React, React DOM, React Router, Chart.js",
-          "completed": true,
-          "createdAt": "2023-10-16T10:30:00Z"
-        },
-        {
-          "id": 103,
-          "title": "Create main dashboard layout",
-          "description": "Header, sidebar, and main content area",
-          "completed": true,
-          "createdAt": "2023-10-17T11:15:00Z"
-        },
-        {
-          "id": 104,
-          "title": "Implement charts with Chart.js",
-          "description": "Bar chart, line chart, and pie chart components",
-          "completed": false,
-          "createdAt": "2023-10-20T13:45:00Z"
-        },
-        {
-          "id": 105,
-          "title": "Add responsive design",
-          "description": "Media queries for mobile and tablet views",
-          "completed": false,
-          "createdAt": "2023-10-22T15:20:00Z"
-        },
-        {
-          "id": 106,
-          "title": "Deploy to Netlify",
-          "description": "Set up continuous deployment from GitHub",
-          "completed": false,
-          "createdAt": "2023-10-25T16:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Node.js RESTful API",
-      "description": "Building a RESTful API with Express.js and MongoDB for a task management app",
-      "status": "completed",
-      "progress": 100,
-      "createdAt": "2023-09-10T10:15:00Z",
-      "updatedAt": "2023-10-10T16:45:00Z",
-      "githubUrl": "https://github.com/yourusername/node-api",
-      "tasks": [
-        {
-          "id": 201,
-          "title": "Set up Express server",
-          "description": "Initialize npm project and install Express",
-          "completed": true,
-          "createdAt": "2023-09-10T11:00:00Z"
-        },
-        {
-          "id": 202,
-          "title": "Connect to MongoDB",
-          "description": "Set up Mongoose and connection to database",
-          "completed": true,
-          "createdAt": "2023-09-12T14:20:00Z"
-        },
-        {
-          "id": 203,
-          "title": "Create task model",
-          "description": "Define Mongoose schema for tasks",
-          "completed": true,
-          "createdAt": "2023-09-15T09:30:00Z"
-        },
-        {
-          "id": 204,
-          "title": "Implement CRUD operations",
-          "description": "Create routes for GET, POST, PUT, DELETE",
-          "completed": true,
-          "createdAt": "2023-09-18T13:15:00Z"
-        },
-        {
-          "id": 205,
-          "title": "Add error handling",
-          "description": "Implement middleware for error handling",
-          "completed": true,
-          "createdAt": "2023-09-22T15:40:00Z"
-        },
-        {
-          "id": 206,
-          "title": "Test API endpoints with Postman",
-          "description": "Create and run comprehensive tests",
-          "completed": true,
-          "createdAt": "2023-09-25T11:20:00Z"
-        }
-      ]
-    },
-    {
-      "id": 3,
       "name": "Python Data Analysis",
       "description": "Data analysis project with Pandas and Matplotlib to analyze sales data",
-      "status": "not-started",
+      "status": "in-progress",
+      "githubUrl": null,
       "progress": 0,
-      "createdAt": "2023-10-20T12:00:00Z",
-      "updatedAt": "2023-10-20T12:00:00Z",
-      "githubUrl": "",
       "tasks": [
         {
-          "id": 301,
-          "title": "Set up Python environment",
-          "description": "Install Python, Jupyter Notebook, and required libraries",
+          "id": 1756063139708,
+          "title": "i",
+          "description": "x",
           "completed": false,
-          "createdAt": "2023-10-20T12:05:00Z"
-        },
-        {
-          "id": 302,
-          "title": "Import and clean dataset",
-          "description": "Load CSV file and handle missing values",
-          "completed": false,
-          "createdAt": "2023-10-20T12:10:00Z"
-        },
-        {
-          "id": 303,
-          "title": "Perform exploratory data analysis",
-          "description": "Calculate statistics and identify patterns",
-          "completed": false,
-          "createdAt": "2023-10-20T12:15:00Z"
-        },
-        {
-          "id": 304,
-          "title": "Create visualizations",
-          "description": "Build charts and graphs with Matplotlib",
-          "completed": false,
-          "createdAt": "2023-10-20T12:20:00Z"
-        },
-        {
-          "id": 305,
-          "title": "Write analysis report",
-          "description": "Document findings and insights",
-          "completed": false,
-          "createdAt": "2023-10-20T12:25:00Z"
+          "createdAt": "2025-08-24T19:18:59.708Z"
         }
-      ]
+      ],
+      "createdAt": "2025-08-24T19:19:03.098Z",
+      "updatedAt": "2025-08-24T19:19:03.098Z",
+      "id": "3"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Vue.js E-commerce Site",
       "description": "Building a responsive e-commerce frontend with Vue.js and Vuex for state management",
       "status": "in-progress",
@@ -210,7 +74,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "React Native Mobile App",
       "description": "Building a cross-platform mobile app for task management using React Native",
       "status": "in-progress",
@@ -264,7 +128,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "JavaScript Algorithm Challenges",
       "description": "Solving algorithm problems on LeetCode to improve problem-solving skills",
       "status": "in-progress",
@@ -311,7 +175,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Full-Stack Blog Application",
       "description": "Building a complete blog with React frontend, Node.js backend, and MySQL database",
       "status": "not-started",
@@ -358,7 +222,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "CSS & Responsive Design Mastery",
       "description": "Advanced CSS techniques including Grid, Flexbox, animations and responsive design principles",
       "status": "completed",
@@ -405,7 +269,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "TypeScript Learning Path",
       "description": "Learning TypeScript fundamentals and applying them to React projects",
       "status": "in-progress",
@@ -441,7 +305,8 @@
           "description": "Create a new project using React + TypeScript",
           "completed": false,
           "createdAt": "2023-10-25T15:45:00Z"
-        },{
+        },
+        {
           "id": 905,
           "title": "Add TypeScript to existing React project",
           "description": "Migrate a JavaScript React app to TypeScript",
@@ -451,7 +316,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "DevOps CI/CD Pipeline",
       "description": "Setting up continuous integration and deployment pipeline for web applications",
       "status": "not-started",
@@ -499,4 +364,3 @@
     }
   ]
 }
-        
