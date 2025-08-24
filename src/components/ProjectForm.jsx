@@ -9,6 +9,7 @@ function ProjectForm({
   tasks = [],
   onSubmit 
 }) {
+    // State management for form fields
     const [name, setName] = useState(projectTitle);
     const [description, setDescription] = useState(projectDescription);
     const [status, setStatus] = useState(projectStatus);
@@ -18,7 +19,7 @@ function ProjectForm({
     const [newTaskDescription, setNewTaskDescription] = useState('');
     const [isEditing, setIsEditing] = useState(!!projectTitle);
 
-    // Update form fields when props change (only in edit mode)
+    // Update form fields when props change (for edit mode)
     useEffect(() => {
         if (isEditing) {
             setName(projectTitle);
@@ -29,13 +30,34 @@ function ProjectForm({
         }
     }, [projectTitle, projectDescription, projectStatus, initialGithubUrl, tasks, isEditing]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // Helper function to calculate project status based on tasks
+    const calculateProjectStatus = (tasks) => {
+        if (!tasks || tasks.length === 0) return 'not-started'; // No tasks = not started
         
+        const completedTasks = tasks.filter(task => task.completed).length; // Count completed tasks
+        const totalTasks = tasks.length; // Total number of tasks
+        
+        if (completedTasks === totalTasks) {
+            return 'completed'; // All tasks completed
+        } else if (completedTasks > 0) {
+            return 'in-progress'; // Some tasks completed
+        } else {
+            return 'not-started'; // No tasks completed
+        }
+    };
+
+    // Form submission handler
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Calculate final status based on current tasks
+        const finalStatus = calculateProjectStatus(projectTasks);
+        
+        // Prepare project data for submission
         const projectData = {
             name,
             description,
-            status,
+            status: finalStatus, // Use calculated status
             githubUrl: githubUrl || null,
             progress: calculateProgress(),
             tasks: projectTasks,
@@ -43,40 +65,67 @@ function ProjectForm({
             updatedAt: new Date().toISOString()
         };
 
-        onSubmit(projectData);
+        onSubmit(projectData); // Call parent onSubmit callback
     };
 
+    // Calculate progress percentage
     const calculateProgress = () => {
-        if (projectTasks.length === 0) return 0;
+        if (projectTasks.length === 0) return 0; // Return 0 if no tasks
         const completedTasks = projectTasks.filter(task => task.completed).length;
-        return Math.round((completedTasks / projectTasks.length) * 100);
+        return Math.round((completedTasks / projectTasks.length) * 100); // Calculate percentage
     };
 
+    // Handler for adding new tasks
     const handleAddTask = (e) => {
-        e.preventDefault();
-        if (!newTaskTitle.trim()) return;
+        e.preventDefault(); // Prevent default form behavior
+        if (!newTaskTitle.trim()) return; // Validate task title is not empty
 
+        // Create new task object
         const newTask = {
-            id: Date.now(),
+            id: Date.now(), // Generate unique ID
             title: newTaskTitle.trim(),
             description: newTaskDescription.trim(),
             completed: false,
             createdAt: new Date().toISOString()
         };
 
-        setProjectTasks([...projectTasks, newTask]);
-        setNewTaskTitle('');
-        setNewTaskDescription('');
+        // Create updated tasks array
+        const updatedTasks = [...projectTasks, newTask];
+        // Calculate new status based on updated tasks
+        const newStatus = calculateProjectStatus(updatedTasks);
+
+        // Update state
+        setProjectTasks(updatedTasks);
+        setStatus(newStatus); // Update project status
+        setNewTaskTitle(''); // Clear input field
+        setNewTaskDescription(''); // Clear input field
     };
 
+    // Handler for removing tasks
     const handleRemoveTask = (taskId) => {
-        setProjectTasks(projectTasks.filter(task => task.id !== taskId));
+        // Filter out the task to be removed
+        const updatedTasks = projectTasks.filter(task => task.id !== taskId);
+        // Calculate new status based on remaining tasks
+        const newStatus = calculateProjectStatus(updatedTasks);
+
+        // Update state
+        setProjectTasks(updatedTasks);
+        setStatus(newStatus); // Update project status
     };
 
+    // Handler for toggling task completion
     const handleToggleTask = (taskId) => {
-        setProjectTasks(projectTasks.map(task =>
+        // Toggle task completion status
+        const updatedTasks = projectTasks.map(task =>
             task.id === taskId ? { ...task, completed: !task.completed } : task
-        ));
+        );
+
+        // Calculate new status based on updated tasks
+        const newStatus = calculateProjectStatus(updatedTasks);
+
+        // Update state
+        setProjectTasks(updatedTasks);
+        setStatus(newStatus); // Update project status
     };
 
     return (

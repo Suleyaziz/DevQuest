@@ -1,25 +1,6 @@
 {
   "projects": [
     {
-      "name": "Python Data Analysis",
-      "description": "Data analysis project with Pandas and Matplotlib to analyze sales data",
-      "status": "in-progress",
-      "githubUrl": null,
-      "progress": 0,
-      "tasks": [
-        {
-          "id": 1756063139708,
-          "title": "i",
-          "description": "x",
-          "completed": false,
-          "createdAt": "2025-08-24T19:18:59.708Z"
-        }
-      ],
-      "createdAt": "2025-08-24T19:19:03.098Z",
-      "updatedAt": "2025-08-24T19:19:03.098Z",
-      "id": "3"
-    },
-    {
       "id": "4",
       "name": "Vue.js E-commerce Site",
       "description": "Building a responsive e-commerce frontend with Vue.js and Vuex for state management",
@@ -361,6 +342,72 @@
           "createdAt": "2023-10-28T14:25:00Z"
         }
       ]
+    },
+    {
+      "name": "Python Data Analysis",
+      "description": "This Analyzes Python data",
+      "status": "in-progress",
+      "githubUrl": null,
+      "progress": 33,
+      "tasks": [
+        {
+          "id": 1756065254565,
+          "title": "Find python data",
+          "description": "look for data",
+          "completed": true,
+          "createdAt": "2025-08-24T19:54:14.565Z"
+        },
+        {
+          "id": 1756065283473,
+          "title": "Read and understand",
+          "description": "Read up on the python data found",
+          "completed": false,
+          "createdAt": "2025-08-24T19:54:43.473Z"
+        },
+        {
+          "id": 1756065331213,
+          "title": "Create my own project",
+          "description": "Create a python project",
+          "completed": false,
+          "createdAt": "2025-08-24T19:55:31.213Z"
+        }
+      ],
+      "createdAt": "2025-08-24T19:56:10.870Z",
+      "updatedAt": "2025-08-24T19:56:10.870Z",
+      "id": "a8a5"
+    },
+    {
+      "id": "e821",
+      "name": "sdsdsd",
+      "description": "dsdsdsd",
+      "status": "completed",
+      "githubUrl": null,
+      "progress": 0,
+      "tasks": [
+        {
+          "id": 1756066207025,
+          "title": "1",
+          "description": "",
+          "completed": true,
+          "createdAt": "2025-08-24T20:10:07.025Z"
+        },
+        {
+          "id": 1756066209788,
+          "title": "2",
+          "description": "",
+          "completed": true,
+          "createdAt": "2025-08-24T20:10:09.788Z"
+        },
+        {
+          "id": 1756066212177,
+          "title": "3",
+          "description": "",
+          "completed": true,
+          "createdAt": "2025-08-24T20:10:12.177Z"
+        }
+      ],
+      "createdAt": "2025-08-24T20:10:14.164Z",
+      "updatedAt": "2025-08-24T20:10:35.345Z"
     }
   ]
 }
