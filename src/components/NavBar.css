@@ -33,8 +33,8 @@
 
 .navbar-logo {
   display: inline-block;
-  width: 45px;   /* adjust size */
-  height: 45px;
+  width: 55px;   /* adjust size */
+  height: 55px;
   background-image: url("/src/assets/DevQuest-favicon.png");
   background-size: contain;
   background-repeat: no-repeat;
