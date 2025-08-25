@@ -77,7 +77,7 @@
 
 /* Progress Section */
 .progress-section {
-        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
+    background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -205,7 +205,7 @@
 }
 
 .project-card {
-        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
+    background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -261,6 +261,7 @@
 }
 
 .project-progress .progress-text {
+        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     font-size: 0.875rem;
     color: #000000;
     text-align: right;
@@ -296,7 +297,7 @@
 
 /* Quick Actions */
 .quick-actions {
-        background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
+    background: linear-gradient(135deg, #68f592   0%, #1d4ed8 76%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
