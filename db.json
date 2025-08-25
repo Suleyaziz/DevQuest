@@ -4,10 +4,10 @@
       "id": "4",
       "name": "Vue.js E-commerce Site",
       "description": "Building a responsive e-commerce frontend with Vue.js and Vuex for state management",
-      "status": "in-progress",
+      "status": "completed",
       "progress": 40,
       "createdAt": "2023-10-05T09:45:00Z",
-      "updatedAt": "2023-10-27T17:30:00Z",
+      "updatedAt": "2025-08-25T06:09:24.678Z",
       "githubUrl": "https://github.com/yourusername/vue-ecommerce",
       "tasks": [
         {
@@ -35,21 +35,21 @@
           "id": 404,
           "title": "Create shopping cart functionality",
           "description": "Add, remove, and update items in cart",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-15T16:30:00Z"
         },
         {
           "id": 405,
           "title": "Add product filtering and sorting",
           "description": "Implement filters by category, price range, etc.",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-18T13:45:00Z"
         },
         {
           "id": 406,
           "title": "Style with CSS framework",
           "description": "Use Tailwind CSS or Bootstrap for styling",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-22T10:10:00Z"
         }
       ]
@@ -156,51 +156,37 @@
       ]
     },
     {
-      "id": "7",
       "name": "Full-Stack Blog Application",
       "description": "Building a complete blog with React frontend, Node.js backend, and MySQL database",
-      "status": "not-started",
-      "progress": 0,
-      "createdAt": "2023-10-25T11:30:00Z",
-      "updatedAt": "2023-10-25T11:30:00Z",
-      "githubUrl": "",
+      "status": "completed",
+      "githubUrl": null,
+      "progress": 100,
       "tasks": [
         {
           "id": 701,
           "title": "Design database schema",
           "description": "Plan tables for users, posts, comments, etc.",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-25T11:35:00Z"
         },
         {
           "id": 702,
           "title": "Set up Express.js server",
           "description": "Create backend API structure",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-25T11:40:00Z"
         },
         {
           "id": 703,
           "title": "Implement user authentication",
           "description": "Add login, registration, and JWT tokens",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-25T11:45:00Z"
-        },
-        {
-          "id": 704,
-          "title": "Build React frontend",
-          "description": "Create components for displaying blog posts",
-          "completed": false,
-          "createdAt": "2023-10-25T11:50:00Z"
-        },
-        {
-          "id": 705,
-          "title": "Add CRUD operations for posts",
-          "description": "Implement create, read, update, delete functionality",
-          "completed": false,
-          "createdAt": "2023-10-25T11:55:00Z"
         }
-      ]
+      ],
+      "createdAt": "2025-08-24T20:12:14.081Z",
+      "updatedAt": "2025-08-24T20:12:14.081Z",
+      "id": "7"
     },
     {
       "id": "8",
@@ -375,39 +361,6 @@
       "createdAt": "2025-08-24T19:56:10.870Z",
       "updatedAt": "2025-08-24T19:56:10.870Z",
       "id": "a8a5"
-    },
-    {
-      "id": "e821",
-      "name": "sdsdsd",
-      "description": "dsdsdsd",
-      "status": "completed",
-      "githubUrl": null,
-      "progress": 0,
-      "tasks": [
-        {
-          "id": 1756066207025,
-          "title": "1",
-          "description": "",
-          "completed": true,
-          "createdAt": "2025-08-24T20:10:07.025Z"
-        },
-        {
-          "id": 1756066209788,
-          "title": "2",
-          "description": "",
-          "completed": true,
-          "createdAt": "2025-08-24T20:10:09.788Z"
-        },
-        {
-          "id": 1756066212177,
-          "title": "3",
-          "description": "",
-          "completed": true,
-          "createdAt": "2025-08-24T20:10:12.177Z"
-        }
-      ],
-      "createdAt": "2025-08-24T20:10:14.164Z",
-      "updatedAt": "2025-08-24T20:10:35.345Z"
     }
   ]
 }

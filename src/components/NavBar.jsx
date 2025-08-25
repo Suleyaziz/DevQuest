@@ -34,7 +34,7 @@ function NavBar() {
                     className="navbar-brand" 
                     onClick={() => handleNavigation('/dashboard')}
                 >
-                    <span className="navbar-logo">⚡</span>
+                    <span className="navbar-logo"></span>
                     <span className="navbar-title">DevQuest</span>
                 </div>
 
