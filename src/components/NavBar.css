@@ -1,16 +1,53 @@
-/* NavBar.css */
+/* =============================
+   Animations
+============================= */
 
-/* Navbar wrapper */
+/* Fade in navbar on page load */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce for active link */
+@keyframes bounceActive {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+  60% { transform: translateY(3px); }
+  80% { transform: translateY(-2px); }
+}
+
+/* Shimmer gradient */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* =============================
+   Navbar Base Styles
+============================= */
+
 .navbar {
-    background: rgba(255, 255, 255, 0.8); /* translucent white */
-    backdrop-filter: blur(12px);          /* frosted glass effect */
-    -webkit-backdrop-filter: blur(12px);  /* Safari support */
-    color: #1e293b; /* dark slate for text */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #1e293b;
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 
+        0 4px 6px rgba(0,0,0,0.1),
+        0 10px 20px rgba(0,0,0,0.08);
+    transform-style: preserve-3d;
+
+    /* 👇 Fade-in animation */
+    animation: fadeDown 0.6s ease-out;
 }
 
 /* Container */
@@ -39,7 +76,7 @@
 
 .navbar-logo {
   display: inline-block;
-  width: 55px;   /* adjust size */
+  width: 55px;
   height: 55px;
   background-image: url("/src/assets/DevQuest-favicon.png");
   background-size: contain;
@@ -54,7 +91,10 @@
     color: #1d4ed8; /* brand blue */
 }
 
-/* Desktop Navigation */
+/* =============================
+   Navigation Links
+============================= */
+
 .navbar-links {
     display: flex;
     gap: 0.5rem;
@@ -63,37 +103,34 @@
 .nav-link {
     background: none;
     border: none;
-    color: #1e293b; /* dark text */
+    color: #1e293b;
     padding: 0.75rem 1.25rem;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
     font-weight: 500;
+    transition: box-shadow 0.3s ease;
 }
 
-.nav-link:hover {
-    background: rgba(29, 78, 216, 0.1); /* soft brand hover */
-    transform: translateY(-1px);
-}
-
+/* 👇 Active link = bounce + shimmer */
 .nav-link.active {
-    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #68f592, #1d4ed8, #68f592);
+    background-size: 300% 300%;
+    animation: shimmer 4s linear infinite, bounceActive 1.2s infinite ease-in-out;
     color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-}
-
-.nav-icon {
-    font-size: 1.1rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .nav-label {
     font-size: 0.95rem;
 }
 
-/* Mobile Menu Button */
+/* =============================
+   Mobile Menu Button
+============================= */
+
 .mobile-menu-button {
     display: none;
     background: none;
@@ -126,16 +163,17 @@
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
-
 .hamburger.open span:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Menu */
+/* =============================
+   Mobile Menu
+============================= */
+
 .mobile-menu {
     position: fixed;
     top: 64px;
@@ -171,36 +209,18 @@
     border-bottom: 1px solid #f1f5f9;
 }
 
-.mobile-nav-link:hover {
-    background: #f7fafc;
-}
-
+/* Active link = shimmer + bounce */
 .mobile-nav-link.active {
-    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #68f592, #1d4ed8, #68f592);
+    background-size: 300% 300%;
+    animation: shimmer 4s linear infinite, bounceActive 1.2s infinite ease-in-out;
     color: white;
 }
 
-.mobile-nav-icon {
-    font-size: 1.25rem;
-    width: 24px;
-    text-align: center;
-}
+/* =============================
+   Responsive Design
+============================= */
 
-.mobile-nav-label {
-    font-size: 1rem;
-}
-
-.mobile-overlay {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -212,14 +232,6 @@
 
     .mobile-menu {
         display: flex;
-    }
-
-    .navbar-container {
-        padding: 0 1rem;
-    }
-
-    .navbar-title {
-        font-size: 1.1rem;
     }
 }
 
