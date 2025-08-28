@@ -1,5 +1,5 @@
 {
-  "name": "package.json",
+  "name": "devquest", 
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,14 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.2",
-    "server": "^1.0.42"
+    "react-router-dom": "^7.8.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
