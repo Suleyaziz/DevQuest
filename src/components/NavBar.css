@@ -1,15 +1,6 @@
-/* Navbar wrapper */
-.navbar {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    color: #1e293b;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-/* ✅ Brand (fixed top-left, independent of container) */
+/* ==========================
+   Brand (Logo + Title)
+   ========================== */
 .navbar-brand {
     position: fixed;
     top: 0.5rem;
@@ -19,7 +10,7 @@
     gap: 0.75rem;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    z-index: 2000; /* ensures it stays above navbar links */
+    z-index: 2000; /* stays above navbar */
 }
 
 .navbar-brand:hover {
@@ -43,21 +34,48 @@
     color: #1d4ed8;
 }
 
-/* Container for nav links */
+/* ==========================
+   Navbar Wrapper + Container
+   ========================== */
+.navbar {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: #1e293b;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: flex-end; /* ✅ push links to right, brand is separate */
+    justify-content: flex-end; /* ✅ push links right, brand is separate */
     align-items: center;
     height: 64px;
 }
 
-/* Nav links */
+/* ==========================
+   Navigation Links
+   ========================== */
 .navbar-links {
     display: flex;
     gap: 0.5rem;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
 }
 
 .nav-link {
@@ -75,8 +93,8 @@
 }
 
 .nav-link:hover {
-    transform: scale(1.08);
-    background: #e5e7eb; /* medium grey */
+    transform: scale(1.08); /* bulge */
+    background: #e5e7eb;   /* medium grey */
     color: #1e293b;
 }
 
@@ -84,9 +102,18 @@
     background: #2563eb;
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* 🔥 Continuous bounce */
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
-/* Mobile Menu Button */
+.nav-label {
+    font-size: 0.95rem;
+}
+
+/* ==========================
+   Mobile Menu Button
+   ========================== */
 .mobile-menu-button {
     display: none;
     background: none;
@@ -128,7 +155,9 @@
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Menu */
+/* ==========================
+   Mobile Menu
+   ========================== */
 .mobile-menu {
     position: fixed;
     top: 64px;
@@ -173,9 +202,14 @@
     background: #ebf8ff;
     color: #2563eb;
     border-left: 4px solid #2563eb;
+
+    /* 🔥 Continuous bounce */
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
-/* Responsive */
+/* ==========================
+   Responsive
+   ========================== */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;

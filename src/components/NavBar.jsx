@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 
-function NavBar() {
+function NavBar({ children }) {
     const navigate = useNavigate();
     const location = useLocation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,58 +20,70 @@ function NavBar() {
         setIsMobileMenuOpen(false);
     };
 
-    return (
-        <nav className="navbar">
-            {/* ✅ Brand is stand-alone, fixed at top-left */}
-            <div 
-                className="navbar-brand" 
-                onClick={() => handleNavigation('/dashboard')}
-            >
-                <span className="navbar-logo"></span>
-                <span className="navbar-title">DevQuest</span>
-            </div>
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
-            {/* ✅ Navbar container holds only links + hamburger */}
-            <div className="navbar-container">
-                <div className="navbar-links">
+    return (
+        <>
+            {/* NavBar */}
+            <nav className="navbar">
+                {/* Brand sits fixed at top-left */}
+                <div 
+                    className="navbar-brand" 
+                    onClick={() => handleNavigation('/dashboard')}
+                >
+                    <span className="navbar-logo"></span>
+                    <span className="navbar-title">DevQuest</span>
+                </div>
+
+                <div className="navbar-container">
+                    {/* Desktop Navigation */}
+                    <div className="navbar-links">
+                        {navigationItems.map((item) => (
+                            <button
+                                key={item.path}
+                                className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+                                onClick={() => handleNavigation(item.path)}
+                            >
+                                <span className="nav-label">{item.label}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button 
+                        className="mobile-menu-button"
+                        onClick={toggleMobileMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+
+                {/* Mobile Navigation Menu */}
+                <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
                     {navigationItems.map((item) => (
                         <button
                             key={item.path}
-                            className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+                            className={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
                             onClick={() => handleNavigation(item.path)}
                         >
-                            <span className="nav-label">{item.label}</span>
+                            <span className="mobile-nav-label">{item.label}</span>
                         </button>
                     ))}
                 </div>
+            </nav>
 
-                {/* Mobile Menu Button */}
-                <button 
-                    className="mobile-menu-button"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+            {/* Page container — fills full width & height */}
+            <div className="page-container">
+                {children}
             </div>
-
-            {/* Mobile Menu */}
-            <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                {navigationItems.map((item) => (
-                    <button
-                        key={item.path}
-                        className={`mobile-nav-link ${isActive(item.path) ? 'active' : ''}`}
-                        onClick={() => handleNavigation(item.path)}
-                    >
-                        <span className="mobile-nav-label">{item.label}</span>
-                    </button>
-                ))}
-            </div>
-        </nav>
+        </>
     );
 }
 
