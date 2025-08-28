@@ -94,12 +94,12 @@
 
 .nav-link:hover {
     transform: scale(1.08); /* bulge */
-    background: #e5e7eb;   /* medium grey */
+    background: #bef8eb;   /* medium grey */
     color: #1e293b;
 }
 
 .nav-link.active {
-    background: #2563eb;
+    background: #049554;
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
@@ -199,8 +199,8 @@
 }
 
 .mobile-nav-link.active {
-    background: #ebf8ff;
-    color: #2563eb;
+    background: #cad2d6;
+    color: #36b1a6;
     border-left: 4px solid #2563eb;
 
     /* 🔥 Continuous bounce */
