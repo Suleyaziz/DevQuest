@@ -111,7 +111,13 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 👇 Bulge out on hover */
+.nav-link:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /* 👇 Active link = bounce + shimmer */
@@ -203,11 +209,28 @@
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
     color: #2d3748;
     font-weight: 500;
     border-bottom: 1px solid #f1f5f9;
 }
+
+
+/* 👇 Bulge out + grey on hover */
+.nav-link:hover {
+    transform: scale(1.08);
+    background: #8bebd4; /* medium grey (Tailwind gray-200) */
+    color: #1e293b; /* keep text dark */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* 👇 Bulge out + grey on hover (mobile too) */
+.mobile-nav-link:hover {
+    transform: scale(1.05);
+    background: #6f737f; /* medium grey */
+    color: #161b25;
+}
+
 
 /* Active link = shimmer + bounce */
 .mobile-nav-link.active {
