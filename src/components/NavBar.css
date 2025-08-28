@@ -1,100 +1,60 @@
-/* =============================
-   Animations
-============================= */
-
-/* Fade in navbar on page load */
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Bounce for active link */
-@keyframes bounceActive {
-  0%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-6px); }
-  60% { transform: translateY(3px); }
-  80% { transform: translateY(-2px); }
-}
-
-/* Shimmer gradient */
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* =============================
-   Navbar Base Styles
-============================= */
-
+/* Navbar wrapper */
 .navbar {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     color: #1e293b;
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 
-        0 4px 6px rgba(0,0,0,0.1),
-        0 10px 20px rgba(0,0,0,0.08);
-    transform-style: preserve-3d;
-
-    /* 👇 Fade-in animation */
-    animation: fadeDown 0.6s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Container */
-.navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-}
-
-/* Brand */
+/* ✅ Brand (fixed top-left, independent of container) */
 .navbar-brand {
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
     cursor: pointer;
     transition: opacity 0.3s ease;
+    z-index: 2000; /* ensures it stays above navbar links */
 }
 
 .navbar-brand:hover {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .navbar-logo {
-  display: inline-block;
-  width: 55px;
-  height: 55px;
-  background-image: url("/src/assets/DevQuest-favicon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-image: url("/src/assets/DevQuest-favicon.png"); /* replace with your logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .navbar-title {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #1d4ed8; /* brand blue */
+    color: #1d4ed8;
 }
 
-/* =============================
-   Navigation Links
-============================= */
+/* Container for nav links */
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: flex-end; /* ✅ push links to right, brand is separate */
+    align-items: center;
+    height: 64px;
+}
 
+/* Nav links */
 .navbar-links {
     display: flex;
     gap: 0.5rem;
@@ -110,33 +70,23 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: all 0.3s ease;
     font-weight: 500;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 👇 Bulge out on hover */
 .nav-link:hover {
     transform: scale(1.08);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: #e5e7eb; /* medium grey */
+    color: #1e293b;
 }
 
-/* 👇 Active link = bounce + shimmer */
 .nav-link.active {
-    background: linear-gradient(135deg, #68f592, #1d4ed8, #68f592);
-    background-size: 300% 300%;
-    animation: shimmer 4s linear infinite, bounceActive 1.2s infinite ease-in-out;
+    background: #2563eb;
     color: white;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.nav-label {
-    font-size: 0.95rem;
-}
-
-/* =============================
-   Mobile Menu Button
-============================= */
-
+/* Mobile Menu Button */
 .mobile-menu-button {
     display: none;
     background: none;
@@ -169,17 +119,16 @@
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
+
 .hamburger.open span:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* =============================
-   Mobile Menu
-============================= */
-
+/* Mobile Menu */
 .mobile-menu {
     position: fixed;
     top: 64px;
@@ -198,6 +147,7 @@
 .mobile-menu.open {
     transform: translateY(0);
     opacity: 1;
+    display: flex;
 }
 
 .mobile-nav-link {
@@ -209,41 +159,23 @@
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     color: #2d3748;
     font-weight: 500;
     border-bottom: 1px solid #f1f5f9;
 }
 
-
-/* 👇 Bulge out + grey on hover */
-.nav-link:hover {
-    transform: scale(1.08);
-    background: #8bebd4; /* medium grey (Tailwind gray-200) */
-    color: #1e293b; /* keep text dark */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* 👇 Bulge out + grey on hover (mobile too) */
 .mobile-nav-link:hover {
-    transform: scale(1.05);
-    background: #6f737f; /* medium grey */
-    color: #161b25;
+    background: #f7fafc;
 }
 
-
-/* Active link = shimmer + bounce */
 .mobile-nav-link.active {
-    background: linear-gradient(135deg, #68f592, #1d4ed8, #68f592);
-    background-size: 300% 300%;
-    animation: shimmer 4s linear infinite, bounceActive 1.2s infinite ease-in-out;
-    color: white;
+    background: #ebf8ff;
+    color: #2563eb;
+    border-left: 4px solid #2563eb;
 }
 
-/* =============================
-   Responsive Design
-============================= */
-
+/* Responsive */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -251,27 +183,5 @@
 
     .mobile-menu-button {
         display: block;
-    }
-
-    .mobile-menu {
-        display: flex;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-container {
-        padding: 0 0.75rem;
-    }
-
-    .navbar-brand {
-        gap: 0.5rem;
-    }
-
-    .navbar-logo {
-        font-size: 1.25rem;
-    }
-
-    .navbar-title {
-        font-size: 1rem;
     }
 }
