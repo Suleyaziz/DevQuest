@@ -1,4 +1,3 @@
-/* ProjectCard.css */
 .project-card {
     background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
     border: 1px solid #e2e8f0;
@@ -218,12 +217,64 @@
 }
 
 .view-project-btn:hover {
-    background: linear-gradient(135deg, #3182ce 0%, #4338ca 100%);
+    background: linear-gradient(135deg, #6178da 0%, #4338ca 100%);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
 }
 
-/* Responsive design */
+/* ---------- Smaller action buttons ---------- */
+.project-card-actions {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: 0.35rem 0.75rem; /* smaller padding */
+    font-size: 0.8rem;        /* smaller text */
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Primary button */
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Danger button */
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .project-card {
         padding: 1.25rem;
