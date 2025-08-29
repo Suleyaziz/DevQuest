@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite", 
     "build": "vite build",
     "lint": "eslint .",
+    "server": "json-server --watch db.json --port 3000",
     "preview": "vite preview"
   },
   "dependencies": {
