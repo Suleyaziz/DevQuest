@@ -2,8 +2,9 @@ import { useState } from 'react';
 import './ProjectCard.css';
 
 function ProjectCard({ project, onViewDetails, onEdit, onDelete }) {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded] = useState(false);
 
+    // Assign status class based on project status
     const getStatusClass = (status) => {
         switch (status) {
             case 'completed': return 'status-completed';
@@ -13,10 +14,12 @@ function ProjectCard({ project, onViewDetails, onEdit, onDelete }) {
         }
     };
 
+    // Format status text nicely
     const formatStatus = (status) => {
-        return status.split('-').map(word =>
-            word.charAt(0).toUpperCase() + word.slice(1)
-        ).join(' ');
+        return status
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
     };
 
     const completedTasks = project.tasks?.filter(task => task.completed).length || 0;
@@ -24,20 +27,22 @@ function ProjectCard({ project, onViewDetails, onEdit, onDelete }) {
 
     return (
         <div className="project-card">
-            {/* Header */}
-            <div className="project-card-header">
-                <h3>{project.name}</h3>
+            {/* Project Title */}
+            <h2 className="project-title">{project.name}</h2>
+
+            {/* Project Description */}
+            <p className="project-description">
+                {project.description || 'No description'}
+            </p>
+
+            {/* Status Badge */}
+            <div className="status-container">
                 <span className={`status-badge ${getStatusClass(project.status)}`}>
                     {formatStatus(project.status)}
                 </span>
             </div>
 
-            {/* Description */}
-            <p className="project-description">
-                {project.description || 'No description provided'}
-            </p>
-
-            {/* Progress Bar + Percentage inline */}
+            {/* Progress Bar + Percentage */}
             <div className="project-progress">
                 <div className="progress-bar">
                     <div
@@ -48,7 +53,7 @@ function ProjectCard({ project, onViewDetails, onEdit, onDelete }) {
                 <span className="progress-text">{project.progress || 0}%</span>
             </div>
 
-            {/* Meta info */}
+            {/* Meta Info */}
             <div className="project-meta">
                 <span className="task-count">{completedTasks}/{totalTasks} tasks</span>
                 <span className="updated-at">
@@ -56,7 +61,7 @@ function ProjectCard({ project, onViewDetails, onEdit, onDelete }) {
                 </span>
             </div>
 
-            {/* Actions */}
+            {/* Action Buttons */}
             <div className="project-card-actions">
                 <button className="btn-primary" onClick={() => onViewDetails(project)}>
                     View Details
