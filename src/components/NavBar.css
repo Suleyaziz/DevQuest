@@ -40,10 +40,12 @@
 .navbar { 
     background: linear-gradient(135deg, #5edad3 0%, #58a6e5 100%);
     color: #1e293b;
-    padding: 0;
+    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center; /* centers child horizontally */
 
     /* 3D effect */
     box-shadow: 
@@ -72,9 +74,23 @@
 /* ==========================
    Navigation Links
    ========================== */
-.navbar-links {
+.nav-links a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 1000;   /* <-- makes them bold */
+  font-size: 11rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #0f172a;
+}
+
+   .navbar-links {
     display: flex;
-    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    gap: 4rem;
 }
 
 /* Bounce animation */
