@@ -51,9 +51,6 @@ npm install
 ##Install JSON Server globally if not already installed
 npm install -g json-server
 
-# Create a db.json file in the root directory with initial data
-echo '{"projects": []}' > db.json
-
 # Start JSON Server (in a separate terminal)
 json-server --watch db.json --port 3000
 ```
