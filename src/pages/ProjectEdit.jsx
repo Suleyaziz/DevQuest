@@ -93,7 +93,7 @@ function ProjectEdit() {
     return (
         <div className="page-container">
             <div className="edit-project-header">
-                <button onClick={handleBack} className="back-button">Back to Projects</button>
+                <button onClick={handleBack} className="back-button">← Back to Projects</button>
                 <h1>Edit Project</h1>
             </div>
             <ProjectForm

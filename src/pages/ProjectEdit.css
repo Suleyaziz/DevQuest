@@ -17,7 +17,27 @@
     border-bottom: 2px solid #e9ecef;
 }
 
+.back-button {
+    background: #1488ee; /* Add a background color */
+    color: rgb(12, 1, 1);
+    border: none;
+    border-radius: 25px; /* Change from 50% to make it a pill shape */
+    padding: 0.5rem 1rem; /* Add padding for text */
+    width: auto; /* Remove fixed width */
+    height: auto; /* Remove fixed height */
+    cursor: pointer;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
 
+.back-button:hover {
+    background: #56f175;
+    transform: translateX(-2px);
+}
 
 .edit-project-header h1 {
     margin: 0;
@@ -78,7 +98,7 @@
 
 /* Project Form Container */
 .project-form-container {
-    background: white;
+    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
