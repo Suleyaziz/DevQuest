@@ -1,6 +1,6 @@
 # DevQuest - Project Management App
 
-![DevQuest Logo](./src/assets/DevQuest-favicon.png){: width="20" height="20" }
+![DevQuest Logo]<img src='./src/assets/DevQuest-favicon.png'widhth="20px">
 
 ## Overview
 
