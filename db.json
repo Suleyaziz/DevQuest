@@ -1,60 +1,6 @@
 {
   "projects": [
     {
-      "id": "4",
-      "name": "Vue.js E-commerce Site",
-      "description": "Building a responsive e-commerce frontend with Vue.js and Vuex for state management",
-      "status": "completed",
-      "progress": 40,
-      "createdAt": "2023-10-05T09:45:00Z",
-      "updatedAt": "2025-08-25T06:09:24.678Z",
-      "githubUrl": "https://github.com/yourusername/vue-ecommerce",
-      "tasks": [
-        {
-          "id": 401,
-          "title": "Set up Vue.js project",
-          "description": "Install Vue CLI and create new project",
-          "completed": true,
-          "createdAt": "2023-10-05T10:00:00Z"
-        },
-        {
-          "id": 402,
-          "title": "Design product components",
-          "description": "Create product card and product list components",
-          "completed": true,
-          "createdAt": "2023-10-08T11:20:00Z"
-        },
-        {
-          "id": 403,
-          "title": "Implement Vuex store",
-          "description": "Set up state management for cart and products",
-          "completed": true,
-          "createdAt": "2023-10-12T14:15:00Z"
-        },
-        {
-          "id": 404,
-          "title": "Create shopping cart functionality",
-          "description": "Add, remove, and update items in cart",
-          "completed": true,
-          "createdAt": "2023-10-15T16:30:00Z"
-        },
-        {
-          "id": 405,
-          "title": "Add product filtering and sorting",
-          "description": "Implement filters by category, price range, etc.",
-          "completed": true,
-          "createdAt": "2023-10-18T13:45:00Z"
-        },
-        {
-          "id": 406,
-          "title": "Style with CSS framework",
-          "description": "Use Tailwind CSS or Bootstrap for styling",
-          "completed": true,
-          "createdAt": "2023-10-22T10:10:00Z"
-        }
-      ]
-    },
-    {
       "id": "5",
       "name": "React Native Mobile App",
       "description": "Building a cross-platform mobile app for task management using React Native",
@@ -286,10 +232,10 @@
       "id": "10",
       "name": "DevOps CI/CD Pipeline",
       "description": "Setting up continuous integration and deployment pipeline for web applications",
-      "status": "not-started",
+      "status": "in-progress",
       "progress": 0,
       "createdAt": "2023-10-28T14:00:00Z",
-      "updatedAt": "2023-10-28T14:00:00Z",
+      "updatedAt": "2025-08-25T17:15:51.100Z",
       "githubUrl": "",
       "tasks": [
         {
@@ -303,7 +249,7 @@
           "id": 1002,
           "title": "Set up test automation",
           "description": "Run tests automatically on pull requests",
-          "completed": false,
+          "completed": true,
           "createdAt": "2023-10-28T14:10:00Z"
         },
         {
