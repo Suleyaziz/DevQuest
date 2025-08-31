@@ -1,7 +1,5 @@
 # DevQuest - Project Management App
 
-# DevQuest - Project Management App
-
 <div align="center">
   <img src='./src/assets/DevQuest-favicon.png' width="150px">
 </div>
