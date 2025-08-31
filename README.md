@@ -1,7 +1,10 @@
 # DevQuest - Project Management App
 
-<img src='./src/assets/DevQuest-favicon.png' width="100px">
+# DevQuest - Project Management App
 
+<div align="center">
+  <img src='./src/assets/DevQuest-favicon.png' width="150px">
+</div>
 ## Overview
 
 DevQuest is a modern, responsive project management application designed specifically for developers and teams to track their coding projects and tasks. Built with React and featuring a beautiful gradient-based UI, DevQuest helps you organize, monitor, and complete your development projects efficiently.
