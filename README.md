@@ -1,6 +1,8 @@
 # DevQuest - Project Management App
 
-![DevQuest Logo](public/DevQuest-favicon.png)
+
+![DevQuest Logo](./src/assets/DevQuest-favicon.png)
+
 
 ## Overview
 
@@ -119,13 +121,6 @@ The application uses a consistent color scheme with gradient backgrounds. To cus
 
 ---
 
-# Browser Support
-- Chrome (latest)  
-- Firefox (latest)  
-- Safari (latest)  
-- Edge (latest)  
-
----
 
 # Contributing
 1. Fork the repository.  
@@ -145,8 +140,8 @@ The application uses a consistent color scheme with gradient backgrounds. To cus
 
 ---
 ## Authours
-1. Rebecca Kibisu
-2. Joseph Ondielo
+1. Rebecca Kibisu - coursecpd@gmail.com
+2. Joseph Ondielo - 
 3. Kevin Koech - kevinkoesch007@gmail.com
 4. Suleiman Aziz - suleimanaziz212@gmail.com
 
