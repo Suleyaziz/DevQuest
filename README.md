@@ -148,10 +148,10 @@ The application uses a consistent color scheme with gradient backgrounds. To cus
 
 ---
 ## Authours
-Rebecca Kibisu
-Joseph Ondielo
-Kevin Koech
-Suleiman Aziz - suleimanaziz212@gmail.com
+1. Rebecca Kibisu
+2. Joseph Ondielo
+3. Kevin Koech - kevinkoesch007@gmail.com
+4. Suleiman Aziz - suleimanaziz212@gmail.com
 
 # License
 This project is licensed under the **MIT License** 
