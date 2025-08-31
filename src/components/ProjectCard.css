@@ -171,8 +171,8 @@
 }
 
 .btn-secondary {
-    background: #f3f4f6;
-    color: #111827;
+    background: orange !important;
+      padding: 0.1em 0.2rem !important;
 }
 
 .btn-secondary:hover {
