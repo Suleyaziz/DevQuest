@@ -72,7 +72,7 @@ function ProjectEdit() {
                 <div className="error">
                     <h2>Error Loading Project</h2>
                     <p>{error}</p>
-                    <button onClick={handleBack}>Back to Projects</button>
+                    <button onClick={handleBack} >Back to Projects</button>
                 </div>
             </div>
         );
@@ -93,9 +93,7 @@ function ProjectEdit() {
     return (
         <div className="page-container">
             <div className="edit-project-header">
-                <button onClick={handleBack} className="back-button">
-                    
-                </button>
+                <button onClick={handleBack} className="back-button">Back to Projects</button>
                 <h1>Edit Project</h1>
             </div>
             <ProjectForm
