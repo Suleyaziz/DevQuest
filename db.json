@@ -1,14 +1,11 @@
 {
   "projects": [
     {
-      "id": "5",
       "name": "React Native Mobile App",
       "description": "Building a cross-platform mobile app for task management using React Native",
       "status": "completed",
-      "progress": 70,
-      "createdAt": "2025-05-25T14:20:00Z",
-      "updatedAt": "2025-08-25T06:11:26.739Z",
       "githubUrl": "https://github.com/yourusername/react-native-tasks",
+      "progress": 100,
       "tasks": [
         {
           "id": 501,
@@ -52,7 +49,10 @@
           "completed": true,
           "createdAt": "2025-05-15T13:50:00Z"
         }
-      ]
+      ],
+      "createdAt": "2025-08-31T17:13:54.701Z",
+      "updatedAt": "2025-08-31T17:13:54.703Z",
+      "id": "5"
     },
     {
       "id": "6",

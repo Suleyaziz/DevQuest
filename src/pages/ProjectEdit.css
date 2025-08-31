@@ -35,7 +35,8 @@
 }
 
 .back-button:hover {
-    background: #56f175;
+    background: #81f097;
+    box-shadow: #2c3e50 0px 4px 8px;
     transform: translateX(-2px);
 }
 

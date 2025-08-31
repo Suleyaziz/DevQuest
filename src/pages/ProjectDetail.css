@@ -83,7 +83,7 @@
 }
 
 .project-info {
-    background: #ffffff;
+    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
