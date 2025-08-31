@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "id": "5",
+      "id": 5,
       "name": "React Native Mobile App",
       "description": "Building a cross-platform mobile app for task management using React Native",
       "status": "completed",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "JavaScript Algorithm Challenges",
       "description": "Solving algorithm problems on LeetCode to improve problem-solving skills",
       "status": "in-progress",
@@ -102,6 +102,7 @@
       ]
     },
     {
+      "id": 7,
       "name": "Full-Stack Blog Application",
       "description": "Building a complete blog with React frontend, Node.js backend, and MySQL database",
       "status": "completed",
@@ -131,11 +132,10 @@
         }
       ],
       "createdAt": "2025-08-24T20:12:14.081Z",
-      "updatedAt": "2025-08-24T20:12:14.081Z",
-      "id": "7"
+      "updatedAt": "2025-08-24T20:12:14.081Z"
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "CSS & Responsive Design Mastery",
       "description": "Advanced CSS techniques including Grid, Flexbox, animations and responsive design principles",
       "status": "completed",
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": 9,
       "name": "TypeScript Learning Path",
       "description": "Learning TypeScript fundamentals and applying them to React projects",
       "status": "in-progress",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "DevOps CI/CD Pipeline",
       "description": "Setting up continuous integration and deployment pipeline for web applications",
       "status": "in-progress",
@@ -276,6 +276,7 @@
       ]
     },
     {
+      "id": 11,
       "name": "Python Data Analysis",
       "description": "This Analyzes Python data",
       "status": "in-progress",
@@ -305,8 +306,7 @@
         }
       ],
       "createdAt": "2025-08-24T19:56:10.870Z",
-      "updatedAt": "2025-08-24T19:56:10.870Z",
-      "id": "a8a5"
+      "updatedAt": "2025-08-24T19:56:10.870Z"
     }
   ]
 }

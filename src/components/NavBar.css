@@ -1,60 +1,115 @@
-/* NavBar.css */
-.navbar {
-    background: linear-gradient(135deg, #68f592 0%, #1d4ed8 100%);
-    color: white;
-    padding: 0;
+/* ==========================
+   Brand (Logo + Title)
+   ========================== */
+.navbar-brand {
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 2000; /* stays above navbar */
+}
+
+.navbar-brand:hover {
+    opacity: 0.85;
+}
+
+.navbar-logo {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-image: url("/src/assets/DevQuest-favicon.png"); /* replace with your logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1d4ed8;
+}
+
+/* ==========================
+   Navbar Wrapper + Container
+   ========================== */
+.navbar { 
+    background: linear-gradient(135deg, #5edad3 0%, #58a6e5 100%);
+    color: #1e293b;
+    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* centers child horizontally */
+
+    /* 3D effect */
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.15),   /* soft bottom shadow */
+        0 6px 20px rgba(0, 0, 0, 0.10),  /* larger ambient shadow */
+        inset 0 2px 4px rgba(255, 255, 255, 0.2); /* highlight for depth */
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Optional: make edges rounded for softer 3D */
+    border-radius: 0 0 12px 12px;
 }
+
 
 .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* ✅ push links right, brand is separate */
     align-items: center;
     height: 64px;
 }
 
-.navbar-brand {
+/* ==========================
+   Navigation Links
+   ========================== */
+.nav-links a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 1000;   /* <-- makes them bold */
+  font-size: 11rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #0f172a;
+}
+
+   .navbar-links {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.navbar-brand:hover {
-    opacity: 0.8;
-}
-
-.navbar-logo {
-  display: inline-block;
-  width: 55px;   /* adjust size */
-  height: 55px;
-  background-image: url("/src/assets/DevQuest-favicon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.navbar-title {
-    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: 2rem;
+    gap: 4rem;
 }
 
-.navbar-links {
-    display: flex;
-    gap: 0.5rem;
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
 }
 
 .nav-link {
     background: none;
     border: none;
-    color: white;
+    color: #1e293b;
     padding: 0.75rem 1.25rem;
     border-radius: 8px;
     cursor: pointer;
@@ -66,29 +121,32 @@
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
+    transform: scale(1.08); /* bulge */
+    background: #bef8eb;   /* medium grey */
+    color: #1e293b;
 }
 
 .nav-link.active {
-    background: rgba(255, 255, 255, 0.2);
+    background: #049554;
+    color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
-.nav-icon {
-    font-size: 1.1rem;
+    /* 🔥 Continuous bounce */
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
 .nav-label {
     font-size: 0.95rem;
 }
 
-/* Mobile Menu Button */
+/* ==========================
+   Mobile Menu Button
+   ========================== */
 .mobile-menu-button {
     display: none;
     background: none;
     border: none;
-    color: white;
+    color: #1e293b;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 4px;
@@ -107,7 +165,7 @@
     display: block;
     height: 2px;
     width: 100%;
-    background: white;
+    background: #1e293b;
     border-radius: 2px;
     transition: all 0.3s ease;
     transform-origin: center;
@@ -125,7 +183,9 @@
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Menu */
+/* ==========================
+   Mobile Menu
+   ========================== */
 .mobile-menu {
     position: fixed;
     top: 64px;
@@ -144,6 +204,7 @@
 .mobile-menu.open {
     transform: translateY(0);
     opacity: 1;
+    display: flex;
 }
 
 .mobile-nav-link {
@@ -166,32 +227,17 @@
 }
 
 .mobile-nav-link.active {
-    background: #ebf8ff;
-    color: #2563eb;
+    background: #cad2d6;
+    color: #36b1a6;
     border-left: 4px solid #2563eb;
+
+    /* 🔥 Continuous bounce */
+    animation: bounce 1.5s infinite ease-in-out;
 }
 
-.mobile-nav-icon {
-    font-size: 1.25rem;
-    width: 24px;
-    text-align: center;
-}
-
-.mobile-nav-label {
-    font-size: 1rem;
-}
-
-.mobile-overlay {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-}
-
-/* Responsive Design */
+/* ==========================
+   Responsive
+   ========================== */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -200,36 +246,4 @@
     .mobile-menu-button {
         display: block;
     }
-
-    .mobile-menu {
-        display: flex;
-    }
-
-    .navbar-container {
-        padding: 0 1rem;
-    }
-
-    .navbar-title {
-        font-size: 1.1rem;
-}
-
-@media (max-width: 480px) {
-    .navbar-container {
-        padding: 0 0.75rem;
-    }
-
-    .navbar-brand {
-        gap: 0.5rem;
-    }
-
-    .navbar-logo {
-        font-size: 1.25rem;
-    }
-
-    .navbar-title {
-        font-size: 1rem;
-    }
-}
-
-
 }
