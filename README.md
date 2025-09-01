@@ -141,7 +141,7 @@ The application uses a consistent color scheme with gradient backgrounds. To cus
 ---
 ## Authours
 1. Rebecca Kibisu - coursecpd@gmail.com
-2. Joseph Ondielo - 
+2. Joseph Ondielo - josebonagain@gmail.com 
 3. Kevin Koech - kevinkoesch007@gmail.com
 4. Suleiman Aziz - suleimanaziz212@gmail.com
 
